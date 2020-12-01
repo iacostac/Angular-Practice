@@ -7,7 +7,7 @@ import { HttpService }  from '../http.service';
 })
 export class ListComponent implements OnInit {
 
-  brews: Object;
+  brews: any;
 
   constructor(private _http: HttpService) { }
 

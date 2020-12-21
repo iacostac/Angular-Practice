@@ -13,4 +13,11 @@ export class HttpService {
     return this.http.get('https://api.openbrewerydb.org/breweries')
     
   }
+  theURL : String;
+  getSpecificBeer(aBeer){
+    
+    return this.http.get('https://api.openbrewerydb.org/breweries//search?query=' + aBeer)
+    
+  }
+
 }

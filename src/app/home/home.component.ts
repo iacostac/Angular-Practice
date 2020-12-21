@@ -1,4 +1,6 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { HttpService }  from '../http.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,9 @@ export class HomeComponent implements OnInit {
 
   clickCounter : number = 0;
   name : string = 'hey';
-  constructor() { }
+  unPerro : String = 'dog';
+  brews: any;
+  constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
   }
@@ -26,4 +30,15 @@ export class HomeComponent implements OnInit {
     }
     return myClasses
   }
+
+
+  getABrew(){
+
+    this._http.getSpecificBeer(this.unPerro).subscribe(data => {
+      this.brews = data;
+      console.log(this.brews);
+    }
+  );
+  }
+  
 }

@@ -26,3 +26,14 @@
         <p>The click counter is <strong>not greater</strong> than 4.</p>
     </ng-template>
 </div>
+
+
+<div class="play-container" [ngClass]= "getSpecificBeer( {{ name }})">
+    <ul *ngIf="brews">
+        <li *ngFor="let brew of brews">
+            <p class="name"> {{ brew.name }}</p>
+            <p class="name"> {{ brew.country }}</p>
+            <a class="site" href="{{ brew.website_url }}">site</a>
+        </li>
+    </ul>
+</div>

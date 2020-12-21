@@ -11,10 +11,11 @@
 
 <div class="play-containter">
     <p>
-        <input type="text" [(ngModel)]= "name">
+        <input type="text" [(ngModel)]= "unPerro">
         <br>
-        <strong>You said: </strong> {{ name }}
+        <strong>You said: </strong> {{ unPerro }}
     </p>
+    <button  (click) = "getABrew()">Buscar Brew</button>
 </div>
 
 <div class="play-container" [ngClass]= "setClasses()">
@@ -28,12 +29,12 @@
 </div>
 
 
-<div class="play-container" [ngClass]= "getSpecificBeer( {{ name }})">
+<div class="play-container">
+
     <ul *ngIf="brews">
         <li *ngFor="let brew of brews">
             <p class="name"> {{ brew.name }}</p>
             <p class="name"> {{ brew.country }}</p>
-            <a class="site" href="{{ brew.website_url }}">site</a>
         </li>
     </ul>
 </div>

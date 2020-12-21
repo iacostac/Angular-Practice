@@ -11,11 +11,12 @@ export class HomeComponent implements OnInit {
 
   clickCounter : number = 0;
   name : string = 'hey';
-  unPerro : String = 'dog';
+  unPerro : String = '';
   brews: any;
   constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
+    this.getABrew()
   }
 
   countClick(){
@@ -32,6 +33,12 @@ export class HomeComponent implements OnInit {
   }
 
 
+
+  probarLog(){
+
+    console.log('click en ProbarLog');
+    
+  }
   getABrew(){
 
     this._http.getSpecificBeer(this.unPerro).subscribe(data => {
